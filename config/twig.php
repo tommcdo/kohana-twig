@@ -3,5 +3,6 @@
 return array(
 
 	'cache' => TWIGPATH.'cache',
+	'auto_reload' => (Kohana::$environment == Kohana::DEVELOPMENT),
 
 );

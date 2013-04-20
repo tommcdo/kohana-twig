@@ -28,8 +28,7 @@ class Twig_Loader_CFS implements Twig_LoaderInterface {
 
 	public function isFresh($name, $time)
 	{
-		error_log('Called isFresh('.$name.', '.$time.')');
-        return filemtime($this->findTemplate($name)) <= $time;
+        return filemtime($this->find_template($name)) <= $time;
 	}
 
 } // End CFS
