@@ -46,8 +46,7 @@ class Kohana_Twig extends View {
 		{
 			$this->set_filename($file);
 		}
-		$template = static::environment()->loadTemplate($this->_file);
-		return $template->render($this->_data);
+		return static::environment()->render($this->_file, $this->_data);
 	}
 
 } // End Twig
