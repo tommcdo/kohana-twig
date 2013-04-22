@@ -5,9 +5,16 @@
  */
 class Twig_Loader_CFS implements Twig_LoaderInterface {
 
+	protected $_config;
+
+	public function __construct($config)
+	{
+		$this->_config = $config;
+	}
+
 	public function find_template($name)
 	{
-		if (($path = Kohana::find_file('twigs', $name, 'html')) === FALSE)
+		if (($path = Kohana::find_file($this->_config['path'], $name, $this->_config['extension'])) === FALSE)
 		{
 			throw new Twig_Exception('The requested twig :name could not be found', array(
 				':name' => $name,

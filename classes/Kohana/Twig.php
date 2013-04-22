@@ -28,7 +28,7 @@ class Kohana_Twig extends View {
 		if (static::$_env === NULL)
 		{
 			$config = Kohana::$config->load('twig');
-			$loader = new Twig_Loader_CFS;
+			$loader = new Twig_Loader_CFS($config);
 			static::$_env = new Twig_Environment($loader, $config->as_array());
 		}
 		return static::$_env;
