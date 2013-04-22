@@ -2,9 +2,13 @@
 
 return array(
 
-	'path' => 'twigs',
-	'extension' => 'html',
-	'cache' => TWIGPATH.'cache',
-	'auto_reload' => (Kohana::$environment == Kohana::DEVELOPMENT),
+	'loader' => array(
+		'path' => 'twigs',
+		'extension' => 'html',
+	),
+	'environment' => array(
+		'cache' => TWIGPATH.'cache',
+		'auto_reload' => (Kohana::$environment == Kohana::DEVELOPMENT),
+	),
 
 );
