@@ -3,12 +3,17 @@
 return array(
 
 	'loader' => array(
-		'path' => 'twigs',
 		'extension' => 'html',
+		'path'      => 'twigs',
 	),
 	'environment' => array(
-		'cache' => TWIGPATH.'cache',
-		'auto_reload' => (Kohana::$environment == Kohana::DEVELOPMENT),
+		'auto_reload'         => (Kohana::$environment == Kohana::DEVELOPMENT),
+		'autoescape'          => TRUE,
+		'base_template_class' => 'Twig_Template',
+		'cache'               => TWIGPATH.'cache',
+		'charset'             => 'utf-8',
+		'optimizations'       => -1,
+		'strict_variables'    => FALSE,
 	),
 
 );
