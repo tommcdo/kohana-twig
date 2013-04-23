@@ -1,12 +1,12 @@
 kohana-twig
 ===========
 
-Kohana-twig is a [Kohana][ko] 3.3 module for the popular [Twig][tw] template
+Kohana-twig is a [Kohana][1] 3.3 module for the popular [Twig][2] template
 engine.  It was designed to offer the full capabilities of Twig, but more
 importantly, to work nicely with the features and development practices of
-Kohana. This module provides a way to use Twigs exactly as Kohana [Views][vi]
+Kohana. This module provides a way to use Twigs exactly as Kohana [Views][3]
 are used, and it uses a custom Twig Loader to locate Twig template files in the
-[cascading filesystem][cfs].
+[Cascading Filesystem][4].
 
 Installation
 ------------
@@ -37,10 +37,10 @@ Inside your action, you would attach the Twig as follows:
 Your Twig files can also references other templates using the cascading
 filesystem.
 
-For more information on Twig templates, see [Twig for Template Designers][tmp]
+For more information on Twig templates, see [Twig for Template Designers][5]
 
-[ko] http://kohanaframework.org
-[vi] http://kohanaframework.org/3.3/guide/kohana/mvc/views
-[cfs] http://kohanaframework.org/3.3/guide/kohana/files
-[tw] http://twig.sensiolabs.org
-[tmp] http://twig.sensiolabs.org/doc/templates.html
+[1] http://kohanaframework.org
+[2] http://twig.sensiolabs.org
+[3] http://kohanaframework.org/3.3/guide/kohana/mvc/views
+[4] http://kohanaframework.org/3.3/guide/kohana/files
+[5] http://twig.sensiolabs.org/doc/templates.html
