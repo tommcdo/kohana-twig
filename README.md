@@ -39,8 +39,8 @@ filesystem.
 
 For more information on Twig templates, see [Twig for Template Designers][5]
 
-[1] http://kohanaframework.org
-[2] http://twig.sensiolabs.org
-[3] http://kohanaframework.org/3.3/guide/kohana/mvc/views
-[4] http://kohanaframework.org/3.3/guide/kohana/files
-[5] http://twig.sensiolabs.org/doc/templates.html
+[1]: http://kohanaframework.org
+[2]: http://twig.sensiolabs.org
+[3]: http://kohanaframework.org/3.3/guide/kohana/mvc/views
+[4]: http://kohanaframework.org/3.3/guide/kohana/files
+[5]: http://twig.sensiolabs.org/doc/templates.html
