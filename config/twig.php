@@ -2,10 +2,19 @@
 
 return array(
 
+	/**
+	 * Twig Loader options
+	 */
 	'loader' => array(
-		'extension' => 'html',
-		'path'      => 'twigs',
+		'extension' => 'html',  // Extension for Twig files
+		'path'      => 'twigs', // Path within cascading filesystem for Twig files
 	),
+
+	/**
+	 * Twig Environment options
+	 *
+	 * http://twig.sensiolabs.org/doc/api.html#environment-options
+	 */
 	'environment' => array(
 		'auto_reload'         => (Kohana::$environment == Kohana::DEVELOPMENT),
 		'autoescape'          => TRUE,

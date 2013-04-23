@@ -1,9 +1,18 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
+/**
+ * Twig view
+ */
 class Kohana_Twig extends View {
 
+	/**
+	 * Twig environment
+	 */
 	protected static $_environment = NULL;
 
+	/**
+	 * Initialize the Twig module
+	 */
 	public static function init()
 	{
 		require_once TWIGPATH.'vendor/twig/lib/Twig/Autoloader.php';
@@ -18,11 +27,23 @@ class Kohana_Twig extends View {
 		}
 	}
 
+	/**
+	 * Create a Twig view instance
+	 *
+	 * @param   string  $file  Name of Twig template
+	 * @param   array   $data  Data to be passed to template
+	 * @return  Twig    Twig view instance
+	 */
 	public static function factory($file = NULL, array $data = NULL)
 	{
 		return new Twig($file, $data);
 	}
 
+	/**
+	 * Create and return Twig environment
+	 *
+	 * @return  Twig_Environment  Twig environment
+	 */
 	protected static function environment()
 	{
 		if (static::$_environment === NULL)
@@ -34,12 +55,24 @@ class Kohana_Twig extends View {
 		return static::$_environment;
 	}
 
+	/**
+	 * Set the filename for the Twig view
+	 *
+	 * @param   string  $file  Base name of template
+	 * @return  Twig    This Twig instance
+	 */
 	function set_filename($file)
 	{
 		$this->_file = $file;
 		return $this;
 	}
 
+	/**
+	 * Render Twig template as string
+	 *
+	 * @param   string  $file  Base name of template
+	 * @return  string  Rendered Twig template
+	 */
 	public function render($file = NULL)
 	{
 		if ($file !== NULL)
