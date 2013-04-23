@@ -15,6 +15,9 @@ First, clone this project from your `MODPATH/` directory:
 
 	cd modules/
 	git clone git://github.com/tommcdo/kohana-twig.git twig
+	cd twig/
+	git submodule init
+	git submodule update
 
 Then, enable the module in `APPPATH/bootstrap.php` by adding it to the modules
 initialization:
