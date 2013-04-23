@@ -49,6 +49,14 @@ located using the cascading filesystem.
 
 For more information on Twig templates, see [Twig for Template Designers][5]
 
+Configuration
+-------------
+
+Default configuration is kept in `MODPATH/twig/config/twig.php`. To override
+it, you can create a config file at `APPPATH/config/twig.php` (or in the
+`config/` directory of any module that gets loaded before this one) that
+specifies values to any options you'd like to change.
+
 [1]: http://kohanaframework.org
 [2]: http://twig.sensiolabs.org
 [3]: http://kohanaframework.org/3.3/guide/kohana/mvc/views
