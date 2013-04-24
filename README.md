@@ -63,9 +63,10 @@ specifies values to any options you'd like to change.
 Extending
 ---------
 
-Twig offers many ways to extend the base templating environment. In kohana-twig,
-this can be achieved by overriding the static `Twig::twig()` function.
-To do so, you can define the class `APPPATH/classes/twig.php` as follows:
+Twig offers many ways to extend the base templating environment. In
+kohana-twig, this can be achieved by overriding the static `Twig::twig()`
+function.  To do so, you can define the class `APPPATH/classes/Twig.php` as
+follows:
 
 	class Twig extends Kohana_Twig {
 
