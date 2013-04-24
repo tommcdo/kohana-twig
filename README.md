@@ -60,6 +60,29 @@ it, you can create a config file at `APPPATH/config/twig.php` (or in the
 `config/` directory of any module that gets loaded before this one) that
 specifies values to any options you'd like to change.
 
+Extending
+---------
+
+Twig offers many ways to extend the base templating environment. In kohana-twig,
+this can be achieved by overriding the static `Twig::twig()` function.
+To do so, you can define the class `APPPATH/classes/twig.php` as follows:
+
+	class Twig extends Kohana_Twig {
+
+		protected static function twig()
+		{
+			// Instantiate the base Twig environment from parent class.
+			$twig = parent::twig();
+
+			// Customize as needed.
+			$twig->addExtension(new Twig_Extension_Example());
+			// ... do more stuff if you'd like ...
+
+			return $twig;
+		}
+
+	} // End Twig
+
 [1]: http://kohanaframework.org
 [2]: http://twig.sensiolabs.org
 [3]: http://kohanaframework.org/3.3/guide/kohana/mvc/views

@@ -40,7 +40,19 @@ class Kohana_Twig extends View {
 	}
 
 	/**
-	 * Create and return Twig environment
+	 * Create a new Twig environment
+	 *
+	 * @return  Twig_Environment  Twig environment
+	 */
+	protected static function twig()
+	{
+		$config = Kohana::$config->load('twig');
+		$loader = new Twig_Loader_CFS($config->get('loader'));
+		return new Twig_Environment($loader, $config->get('environment'));
+	}
+
+	/**
+	 * Get the Twig environment (or create it on first call)
 	 *
 	 * @return  Twig_Environment  Twig environment
 	 */
@@ -48,9 +60,7 @@ class Kohana_Twig extends View {
 	{
 		if (static::$_environment === NULL)
 		{
-			$config = Kohana::$config->load('twig');
-			$loader = new Twig_Loader_CFS($config->get('loader'));
-			static::$_environment = new Twig_Environment($loader, $config->get('environment'));
+			static::$_environment = static::twig();
 		}
 		return static::$_environment;
 	}
