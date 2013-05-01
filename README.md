@@ -47,10 +47,10 @@ Inside your action, you would attach the Twig as follows:
 	$twig->name = 'Tom';
 	$this->response->body($twig);
 
-Your Twig files can also references other templates by name, which will be
+Your Twig files can also reference other templates by name, which will be
 located using the cascading filesystem. Note that the extension of the twig
-file is omitted. In the following Twig template example, a file called
-`template.html` would be located in the cascading filesystem.
+file is omitted; in the following Twig template example, a file called
+`template.html` would be located in the cascading filesystem:
 
 	{% extends "template" %}
 
