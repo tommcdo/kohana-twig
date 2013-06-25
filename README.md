@@ -74,16 +74,16 @@ follows:
 
 	class Twig extends Kohana_Twig {
 
-		protected static function twig()
+		protected static function env()
 		{
 			// Instantiate the base Twig environment from parent class.
-			$twig = parent::twig();
+			$env = parent::env();
 
 			// Customize as needed.
-			$twig->addExtension(new Twig_Extension_Example());
+			$env->addExtension(new Twig_Extension_Example());
 			// ... do more stuff if you'd like ...
 
-			return $twig;
+			return $env;
 		}
 
 	} // End Twig

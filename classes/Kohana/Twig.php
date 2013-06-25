@@ -44,7 +44,7 @@ class Kohana_Twig extends View {
 	 *
 	 * @return  Twig_Environment  Twig environment
 	 */
-	protected static function twig()
+	protected static function env()
 	{
 		$config = Kohana::$config->load('twig');
 		$loader = new Twig_Loader_CFS($config->get('loader'));
@@ -60,7 +60,7 @@ class Kohana_Twig extends View {
 	{
 		if (static::$_environment === NULL)
 		{
-			static::$_environment = static::twig();
+			static::$_environment = static::env();
 		}
 		return static::$_environment;
 	}
