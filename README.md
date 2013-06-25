@@ -68,22 +68,22 @@ Extending
 ---------
 
 Twig offers many ways to extend the base templating environment. In
-kohana-twig, this can be achieved by overriding the static `Twig::twig()`
+kohana-twig, this can be achieved by overriding the static `Twig::env()`
 function.  To do so, you can define the class `APPPATH/classes/Twig.php` as
 follows:
 
 	class Twig extends Kohana_Twig {
 
-		protected static function twig()
+		protected static function env()
 		{
 			// Instantiate the base Twig environment from parent class.
-			$twig = parent::twig();
+			$env = parent::env();
 
 			// Customize as needed.
-			$twig->addExtension(new Twig_Extension_Example());
+			$env->addExtension(new Twig_Extension_Example());
 			// ... do more stuff if you'd like ...
 
-			return $twig;
+			return $env;
 		}
 
 	} // End Twig
