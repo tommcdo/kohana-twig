@@ -19,7 +19,7 @@ class Kohana_Twig extends View {
 		Twig_Autoloader::register();
 
 		$path = Kohana::$config->load('twig.environment.cache');
-		if ( ! is_writable($path))
+		if ( ! is_writable($path) && ! mkdir($path) )
 		{
 			throw new Kohana_Exception('Directory :dir must be writable', array(
 				':dir' => Debug::path($path),
