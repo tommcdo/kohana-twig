@@ -25,6 +25,13 @@ class Kohana_Twig extends View {
 				':dir' => Debug::path($path),
 			));
 		}
+
+		$extensions = Kohana::$config->load('twig.extensions');
+		if ($extensions)
+		{
+			require_once TWIGPATH.'vendor/twig-extensions/lib/Twig/Extensions/Autoloader.php';
+			Twig_Extensions_Autoloader::register();
+		}
 	}
 
 	/**
@@ -48,7 +55,21 @@ class Kohana_Twig extends View {
 	{
 		$config = Kohana::$config->load('twig');
 		$loader = new Twig_Loader_CFS($config->get('loader'));
-		return new Twig_Environment($loader, $config->get('environment'));
+		$environment = new Twig_Environment($loader, $config->get('environment'));
+
+		// Register standard extensions
+		$extensions = $config->get('extensions');
+		if ($extensions && is_array($extensions))
+		{
+			foreach ($extensions as $extension)
+			{
+				$name = ucwords(strtolower($extension));
+				$class = 'Twig_Extensions_Extension_'.$name;
+				$environment->addExtension(new $class());
+			}
+		}
+
+		return $environment;
 	}
 
 	/**
