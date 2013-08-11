@@ -1,3 +1,6 @@
 [submodule "vendor/twig"]
 	path = vendor/twig
 	url = https://github.com/fabpot/Twig.git
+[submodule "vendor/twig-extensions"]
+	path = vendor/twig-extensions
+	url = https://github.com/fabpot/Twig-extensions.git
