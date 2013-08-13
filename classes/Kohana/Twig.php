@@ -18,12 +18,10 @@ class Kohana_Twig extends View {
 	 */
 	protected static function _init_cache($path)
 	{
-		if (mkdir($path, 0755, true) AND chmod($path, 0755))
+		if (mkdir($path, 0755, TRUE) AND chmod($path, 0755))
 			return TRUE;
 
-		throw new Kohana_Exception('Unable to create the cache directory :dir', array(
-			':dir' => Debug::path($path)
-		));
+		return FALSE;
 	}
 
 	/**
