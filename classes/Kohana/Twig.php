@@ -11,6 +11,22 @@ class Kohana_Twig extends View {
 	protected static $_environment = NULL;
 
 	/**
+	 * Initialize the cache directory
+	 *
+	 * @param   string  $path Path to the cache directory
+	 * @return  boolean
+	 */
+	protected static function _init_cache($path)
+	{
+		if (mkdir($path, 0755, true) AND chmod($path, 0755))
+			return TRUE;
+
+		throw new Kohana_Exception('Unable to create the cache directory :dir', array(
+			':dir' => Debug::path($path)
+		));
+	}
+
+	/**
 	 * Initialize the Twig module
 	 */
 	public static function init()
@@ -19,18 +35,11 @@ class Kohana_Twig extends View {
 		Twig_Autoloader::register();
 
 		$path = Kohana::$config->load('twig.environment.cache');
-		if ( ! is_writable($path) && ! mkdir($path) )
+		if ( ! is_writable($path) AND ! self::_init_cache($path))
 		{
 			throw new Kohana_Exception('Directory :dir must be writable', array(
 				':dir' => Debug::path($path),
 			));
-		}
-
-		$extensions = Kohana::$config->load('twig.extensions');
-		if ($extensions)
-		{
-			require_once TWIGPATH.'vendor/twig-extensions/lib/Twig/Extensions/Autoloader.php';
-			Twig_Extensions_Autoloader::register();
 		}
 	}
 
@@ -55,21 +64,7 @@ class Kohana_Twig extends View {
 	{
 		$config = Kohana::$config->load('twig');
 		$loader = new Twig_Loader_CFS($config->get('loader'));
-		$environment = new Twig_Environment($loader, $config->get('environment'));
-
-		// Register standard extensions
-		$extensions = $config->get('extensions');
-		if ($extensions && is_array($extensions))
-		{
-			foreach ($extensions as $extension)
-			{
-				$name = ucwords(strtolower($extension));
-				$class = 'Twig_Extensions_Extension_'.$name;
-				$environment->addExtension(new $class());
-			}
-		}
-
-		return $environment;
+		return new Twig_Environment($loader, $config->get('environment'));
 	}
 
 	/**
