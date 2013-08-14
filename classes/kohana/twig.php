@@ -11,6 +11,20 @@ class Kohana_Twig extends View {
 	protected static $_environment = NULL;
 
 	/**
+	 * Initialize the cache directory
+	 *
+	 * @param   string  $path Path to the cache directory
+	 * @return  boolean
+	 */
+	protected static function _init_cache($path)
+	{
+		if (mkdir($path, 0755, TRUE) AND chmod($path, 0755))
+			return TRUE;
+
+		return FALSE;
+	}
+
+	/**
 	 * Initialize the Twig module
 	 */
 	public static function init()
@@ -19,9 +33,9 @@ class Kohana_Twig extends View {
 		Twig_Autoloader::register();
 
 		$path = Kohana::$config->load('twig.environment.cache');
-		if ( ! is_writable($path))
+		if ( ! is_writable($path) AND ! self::_init_cache($path))
 		{
-			throw new Kohana_Exception('Directory :dir must be writable', array(
+			throw new Kohana_Exception('Directory :dir must exist and be writable', array(
 				':dir' => Debug::path($path),
 			));
 		}

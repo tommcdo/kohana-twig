@@ -14,7 +14,7 @@ Installation
 First, clone this project from your `MODPATH/` directory:
 
 	cd modules/
-	git clone git://github.com/tommcdo/kohana-twig.git twig
+	git clone https://github.com/tommcdo/kohana-twig.git twig
 	cd twig/
 	git submodule init
 	git submodule update
@@ -70,6 +70,7 @@ Extending
 Twig offers many ways to extend the base templating environment. In
 kohana-twig, this can be achieved by overriding the static `Twig::env()`
 function.  To do so, you can define the class `APPPATH/classes/Twig.php` as
+method. To do so, you can define the class `APPPATH/classes/Twig.php` as
 follows:
 
 	class Twig extends Kohana_Twig {
@@ -80,7 +81,7 @@ follows:
 			$env = parent::env();
 
 			// Customize as needed.
-			$env->addExtension(new Twig_Extension_Example());
+			$env->addExtension(new Twig_Extension_Example);
 			// ... do more stuff if you'd like ...
 
 			return $env;
