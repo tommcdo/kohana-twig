@@ -62,7 +62,21 @@ class Kohana_Twig extends View {
 	{
 		$config = Kohana::$config->load('twig');
 		$loader = new Twig_Loader_CFS($config->get('loader'));
-		return new Twig_Environment($loader, $config->get('environment'));
+		$env = new Twig_Environment($loader, $config->get('environment'));
+
+		foreach ($config->get('functions') as $key => $value)
+		{
+		    $function = new Twig_SimpleFunction($key, $value);
+		    $env->addFunction($function);
+		}
+
+		foreach ($config->get('filters') as $key => $value)
+		{
+		    $filter = new Twig_SimpleFilter($key, $value);
+		    $env->addFilter($filter);
+		}
+                
+                return $env;
 	}
 
 	/**
