@@ -66,14 +66,14 @@ class Kohana_Twig extends View {
 
 		foreach ($config->get('functions') as $key => $value)
 		{
-		    $function = new Twig_SimpleFunction($key, $value);
-		    $env->addFunction($function);
+			$function = new Twig_SimpleFunction($key, $value);
+			$env->addFunction($function);
 		}
 
 		foreach ($config->get('filters') as $key => $value)
 		{
-		    $filter = new Twig_SimpleFilter($key, $value);
-		    $env->addFilter($filter);
+			$filter = new Twig_SimpleFilter($key, $value);
+			$env->addFilter($filter);
 		}
 
 		return $env;
