@@ -24,6 +24,15 @@ return array(
 		'optimizations'       => -1,
 		'strict_variables'    => FALSE,
 	),
+
+	/**
+	 * Custom functions and filters
+	 *
+	 *     'functions' => array(
+	 *         'my_method' => array('MyClass', 'my_method'),
+	 *     ),
+	 */
 	'functions' => array(),
 	'filters' => array(),
+
 );
