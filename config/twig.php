@@ -24,5 +24,6 @@ return array(
 		'optimizations'       => -1,
 		'strict_variables'    => FALSE,
 	),
-
+	'functions' => array(),
+	'filters' => array(),
 );
