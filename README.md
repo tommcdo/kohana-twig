@@ -88,8 +88,17 @@ follows:
 
 	} // End Twig
 
+Contributing
+------------
+
+Contributions are always welcome and appreciated. Since this is a Kohana
+module, the main thing I ask is that the code conforms to
+[Kohana's Conventions and Style][6]. If you're not familiar with them,
+please read them over thoroughly.
+
 [1]: http://kohanaframework.org
 [2]: http://twig.sensiolabs.org
 [3]: http://kohanaframework.org/3.3/guide/kohana/mvc/views
 [4]: http://kohanaframework.org/3.3/guide/kohana/files
 [5]: http://twig.sensiolabs.org/doc/templates.html
+[6]: http://kohanaframework.org/3.3/guide/kohana/conventions
