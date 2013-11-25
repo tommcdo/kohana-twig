@@ -17,7 +17,8 @@ return array(
 	 */
 	'environment' => array(
 		'auto_reload'         => (Kohana::$environment == Kohana::DEVELOPMENT),
-		'autoescape'          => TRUE,
+        'debug'               => (Kohana::$environment == Kohana::DEVELOPMENT),
+        'autoescape'          => TRUE,
 		'base_template_class' => 'Twig_Template',
 		'cache'               => TWIGPATH.'cache',
 		'charset'             => 'utf-8',
@@ -34,5 +35,12 @@ return array(
 	 */
 	'functions' => array(),
 	'filters' => array(),
+
+    /**
+     * Twig extensions to register
+     *
+     * 'extensions' => array('Twig_Extension_Debug', 'MyProject_Twig_Extension')
+     */
+    'extensions'    =>  array(),
 
 );

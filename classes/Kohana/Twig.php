@@ -76,6 +76,12 @@ class Kohana_Twig extends View {
 			$env->addFilter($filter);
 		}
 
+		foreach ($config->get('extensions') as $extension_class)
+		{
+            $extension = new $extension_class;
+			$env->addExtension($extension);
+		}
+
 		return $env;
 	}
 
