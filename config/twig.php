@@ -8,6 +8,19 @@ return array(
 	'loader' => array(
 		'extension' => 'html',  // Extension for Twig files
 		'path'      => 'twigs', // Path within cascading filesystem for Twig files
+
+        /**
+         * Namespaces to add
+         *
+         *  'namespaces' => array(
+         *      'templates' =>  'base/templates',
+         *      'layouts'   =>  array('base/layouts', 'admin/layouts'),
+         *  )
+         */
+        'namespaces'    =>  array(
+            'layouts'   =>  'layouts',
+            'templates' =>  'templates',
+        ),
 	),
 
 	/**

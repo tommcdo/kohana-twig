@@ -111,6 +111,16 @@ class Kohana_Twig extends View {
 		return $this;
 	}
 
+    /**
+     * Returns view filename
+     *
+     * @return string
+     */
+    public function get_filename()
+    {
+        return $this->_file;
+    }
+
 	/**
 	 * Render Twig template as string
 	 *
