@@ -10,12 +10,17 @@ return array(
 		'path'      => 'twigs', // Path within cascading filesystem for Twig files
 
         /**
+         * Enable caching of directories list
+         */
+        'cache' =>  (Kohana::$environment == Kohana::PRODUCTION),
+
+        /**
          * Namespaces to add
          *
-         *  'namespaces' => array(
-         *      'templates' =>  'base/templates',
-         *      'layouts'   =>  array('base/layouts', 'admin/layouts'),
-         *  )
+         *      'namespaces' => array(
+         *          'templates' =>  'base/templates',
+         *          'layouts'   =>  array('base/layouts', 'admin/layouts'),
+         *      )
          */
         'namespaces'    =>  array(
             'layouts'   =>  'layouts',
@@ -42,9 +47,9 @@ return array(
 	/**
 	 * Custom functions and filters
 	 *
-	 *     'functions' => array(
-	 *         'my_method' => array('MyClass', 'my_method'),
-	 *     ),
+	 *      'functions' => array(
+	 *          'my_method' => array('MyClass', 'my_method'),
+	 *      ),
 	 */
 	'functions' => array(),
 	'filters' => array(),
@@ -52,7 +57,10 @@ return array(
     /**
      * Twig extensions to register
      *
-     * 'extensions' => array('Twig_Extension_Debug', 'MyProject_Twig_Extension')
+     *      'extensions' => array(
+     *          'Twig_Extension_Debug',
+     *          'MyProject_Twig_Extension'
+     *      )
      */
     'extensions'    =>  array(),
 

@@ -112,28 +112,50 @@ class Kohana_Twig extends View {
 	}
 
     /**
-     * Returns view filename
+     * Render Twig template as string
      *
-     * @return string
+     * @param   string  $file  Base name of template
+     * @return  string  Rendered Twig template
+     * @throws View_Exception
      */
-    public function get_filename()
-    {
-        return $this->_file;
-    }
-
-	/**
-	 * Render Twig template as string
-	 *
-	 * @param   string  $file  Base name of template
-	 * @return  string  Rendered Twig template
-	 */
-	public function render($file = NULL)
+    public function render($file = NULL)
 	{
 		if ($file !== NULL)
 		{
 			$this->set_filename($file);
 		}
-		return static::environment()->render($this->_file, $this->_data);
-	}
+
+        if (empty($this->_file))
+        {
+            throw new Twig_Exception('You must set the file to use within your Twig view before rendering');
+        }
+
+        return static::capture($this->_file, $this->_data);
+    }
+
+    /**
+     * Captures the output that is generated when a view is included.
+     * The view data will be extracted to make local variables. This method
+     * is static to prevent object scope resolution.
+     *
+     *     $output = Twig::capture($file, $data);
+     *
+     * @param   string  $kohana_view_filename   filename
+     * @param   array   $kohana_view_data       variables
+     * @return  string
+     */
+    protected static function capture($kohana_view_filename, array $kohana_view_data)
+    {
+        // Import the view variables to local namespace
+        extract($kohana_view_data, EXTR_SKIP);
+
+        if (View::$_global_data)
+        {
+            // Import the global view variables to local namespace
+            extract(View::$_global_data, EXTR_SKIP | EXTR_REFS);
+        }
+
+        return static::environment()->render($kohana_view_filename, $kohana_view_data);
+    }
 
 } // End Twig
