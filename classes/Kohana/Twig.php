@@ -64,6 +64,10 @@ class Kohana_Twig extends View {
 		$loader = new Twig_Loader_CFS($config->get('loader'));
 		$env = new Twig_Environment($loader, $config->get('environment'));
 
+        /** @var Twig_Extension_Core $core_ext */
+        $core_ext = $env->getExtension('core');
+        $core_ext->setTimezone( date_default_timezone_get() );
+
 		foreach ($config->get('functions') as $key => $value)
 		{
 			$function = new Twig_SimpleFunction($key, $value);
