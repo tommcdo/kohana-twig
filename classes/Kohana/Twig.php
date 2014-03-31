@@ -52,7 +52,7 @@ class Kohana_Twig extends View {
 	{
 		return new Twig($file, $data);
 	}
-
+        
 	/**
 	 * Create a new Twig environment
 	 *
@@ -117,6 +117,13 @@ class Kohana_Twig extends View {
 		{
 			$this->set_filename($file);
 		}
+                
+                // Bind global data to Twig environment
+                foreach (static::$_global_data as $key => $value) 
+                {
+                    static::environment()->addGlobal($key, $value);
+                }
+                
 		return static::environment()->render($this->_file, $this->_data);
 	}
 
