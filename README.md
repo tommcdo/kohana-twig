@@ -25,7 +25,7 @@ initialization:
 
 	Kohana::modules(array(
 		// ... all your other modules ...
-		'twig'       => MODPATH.'twig',       // Twig templating engine
+		'twig'       => MODPATH.'kohana-twig',       // Twig templating engine
 	));
 
 This module was designed for Kohana 3.3, but can be easily made to work with
