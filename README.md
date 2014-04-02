@@ -1,7 +1,7 @@
 kohana-twig Composer
 ===========
 
-Fork of kohana-twig to use composer instead of git-submodules
+Fork of [kohana-twig][7] to use composer instead of git-submodules
 
 Kohana-twig is a [Kohana][1] 3.3 module for the popular [Twig][2] template
 engine. It was designed to offer the full capabilities of Twig with a strong
@@ -103,3 +103,4 @@ please read them over thoroughly.
 [4]: http://kohanaframework.org/3.3/guide/kohana/files
 [5]: http://twig.sensiolabs.org/doc/templates.html
 [6]: http://kohanaframework.org/3.3/guide/kohana/conventions
+[7]: https://github.com/tommcdo/kohana-twig

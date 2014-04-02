@@ -1,8 +1,8 @@
 {
     "name":        "misterglass/kohana-twig",
-    "description": "Kohana 3.3 module for the popular Twig template engine",
     "type": "kohana-module",
-    "homepage":    "https://github.com/tommcdo/kohana-twig",
+    "description": "Kohana 3.3 module for the popular Twig template engine",
+    "homepage":    "https://github.com/MisterGlass/kohana-twig",
     "license":     "BSD-3-Clause",
     "keywords":    ["kohana", "templating", "twig"],
     "authors": [
