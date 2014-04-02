@@ -11,6 +11,11 @@
             "homepage": "https://github.com/tommcdo",
             "role":     "developer"
         }
+        {
+            "name":     "Yair Silbermintz",
+            "homepage": "https://github.com/MisterGlass",
+            "role":     "developer"
+        }
     ],
     "require": {
         "twig/twig"  : "1.*",
