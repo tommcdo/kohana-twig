@@ -1,0 +1,21 @@
+{
+    "name":        "MisterGlass/twig",
+    "description": "Kohana 3.3 module for the popular Twig template engine",
+    "type": "kohana-module",
+    "homepage":    "https://github.com/tommcdo/kohana-twig",
+    "license":     "BSD-3-Clause",
+    "keywords":    ["kohana", "templating", "twig"],
+    "authors": [
+        {
+            "name":     "Tom McDonald",
+            "homepage": "https://github.com/tommcdo",
+            "role":     "developer"
+        }
+    ],
+    "require": {
+        "twig/twig"  : "1.*",
+        "composer/installers": "~1.0",
+        "kohana/core": ">=3.3",
+        "php": ">=5.3.3"
+    }
+}
