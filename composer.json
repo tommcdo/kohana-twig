@@ -1,5 +1,5 @@
 {
-    "name":        "MisterGlass/twig",
+    "name":        "MisterGlass/kohana-twig",
     "description": "Kohana 3.3 module for the popular Twig template engine",
     "type": "kohana-module",
     "homepage":    "https://github.com/tommcdo/kohana-twig",
