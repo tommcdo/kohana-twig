@@ -1,5 +1,5 @@
 {
-    "name":        "MisterGlass/kohana-twig",
+    "name":        "misterglass/kohana-twig",
     "description": "Kohana 3.3 module for the popular Twig template engine",
     "type": "kohana-module",
     "homepage":    "https://github.com/tommcdo/kohana-twig",
@@ -10,7 +10,7 @@
             "name":     "Tom McDonald",
             "homepage": "https://github.com/tommcdo",
             "role":     "developer"
-        }
+        },
         {
             "name":     "Yair Silbermintz",
             "homepage": "https://github.com/MisterGlass",
