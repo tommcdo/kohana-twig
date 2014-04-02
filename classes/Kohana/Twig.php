@@ -29,7 +29,6 @@ class Kohana_Twig extends View {
 	 */
 	public static function init()
 	{
-		require_once TWIGPATH.'vendor/twig/lib/Twig/Autoloader.php';
 		Twig_Autoloader::register();
 
 		$path = Kohana::$config->load('twig.environment.cache');
