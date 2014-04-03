@@ -22,5 +22,10 @@
         "twig/twig"  : "1.*",
         "kohana/core": ">=3.3",
         "php": ">=5.3.3"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
     }
 }
