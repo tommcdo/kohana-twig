@@ -75,6 +75,12 @@ class Kohana_Twig extends View {
 			$filter = new Twig_SimpleFilter($key, $value);
 			$env->addFilter($filter);
 		}
+                
+                foreach ($config->get('tests') as $key => $value)
+                {
+                    $test = new Twig_SimpleTest($key, $value);
+                    $env->addTest($test);
+                }
 
 		return $env;
 	}

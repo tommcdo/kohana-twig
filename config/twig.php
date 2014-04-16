@@ -26,7 +26,7 @@ return array(
 	),
 
 	/**
-	 * Custom functions and filters
+	 * Custom functions, filters and tests
 	 *
 	 *     'functions' => array(
 	 *         'my_method' => array('MyClass', 'my_method'),
@@ -34,5 +34,6 @@ return array(
 	 */
 	'functions' => array(),
 	'filters' => array(),
+        'tests' => array()
 
 );
