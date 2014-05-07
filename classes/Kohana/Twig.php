@@ -84,7 +84,7 @@ class Kohana_Twig extends View {
 
 		foreach ($config->get('extensions') as $extension_class)
 		{
-            $extension = new $extension_class;
+        	$extension = new $extension_class;
 			$env->addExtension($extension);
 		}
 
