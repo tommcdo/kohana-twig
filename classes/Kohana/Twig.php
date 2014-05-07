@@ -125,37 +125,13 @@ class Kohana_Twig extends View {
 			$this->set_filename($file);
 		}
 
-        if (empty($this->_file))
-        {
-            throw new Twig_Exception('You must set the file to use within your Twig view before rendering');
-        }
+		// Bind global data to Twig environment.
+		foreach (static::$_global_data as $key => $value)
+		{
+			static::environment()->addGlobal($key, $value);
+		}
 
-        return static::capture($this->_file, $this->_data);
-    }
-
-    /**
-     * Captures the output that is generated when a view is included.
-     * The view data will be extracted to make local variables. This method
-     * is static to prevent object scope resolution.
-     *
-     *     $output = Twig::capture($file, $data);
-     *
-     * @param   string  $kohana_view_filename   filename
-     * @param   array   $kohana_view_data       variables
-     * @return  string
-     */
-    protected static function capture($kohana_view_filename, array $kohana_view_data)
-    {
-        // Import the view variables to local namespace
-        extract($kohana_view_data, EXTR_SKIP);
-
-        if (View::$_global_data)
-        {
-            // Import the global view variables to local namespace
-            extract(View::$_global_data, EXTR_SKIP | EXTR_REFS);
-        }
-
-        return static::environment()->render($kohana_view_filename, $kohana_view_data);
-    }
+		return static::environment()->render($this->_file, $this->_data);
+	}
 
 } // End Twig
