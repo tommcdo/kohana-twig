@@ -53,7 +53,7 @@ return array(
 	 */
 	'functions' => array(),
 	'filters' => array(),
-        'tests' => array()
+    'tests' => array(),
 
     /**
      * Twig extensions to register
