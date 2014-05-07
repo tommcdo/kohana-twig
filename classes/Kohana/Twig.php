@@ -50,7 +50,7 @@ class Kohana_Twig extends View {
 	 */
 	public static function factory($file = NULL, array $data = NULL)
 	{
-		return new static($file, $data);
+		return new Twig($file, $data);
 	}
 
 	/**
