@@ -75,6 +75,18 @@ class Kohana_Twig extends View {
 			$filter = new Twig_SimpleFilter($key, $value);
 			$env->addFilter($filter);
 		}
+                
+		foreach ($config->get('tests') as $key => $value)
+		{
+		    $test = new Twig_SimpleTest($key, $value);
+		    $env->addTest($test);
+		}
+
+		foreach ($config->get('extensions') as $extension_class)
+		{
+        	$extension = new $extension_class;
+			$env->addExtension($extension);
+		}
 
 		return $env;
 	}
@@ -105,13 +117,14 @@ class Kohana_Twig extends View {
 		return $this;
 	}
 
-	/**
-	 * Render Twig template as string
-	 *
-	 * @param   string  $file  Base name of template
-	 * @return  string  Rendered Twig template
-	 */
-	public function render($file = NULL)
+    /**
+     * Render Twig template as string
+     *
+     * @param   string  $file  Base name of template
+     * @return  string  Rendered Twig template
+     * @throws View_Exception
+     */
+    public function render($file = NULL)
 	{
 		if ($file !== NULL)
 		{
