@@ -1,15 +1,21 @@
 {
-    "name":        "misterglass/kohana-twig",
+    "name": "tommcdo/kohana-twig",
     "type": "kohana-module",
     "description": "Kohana 3.3 module for the popular Twig template engine",
-    "homepage":    "https://github.com/MisterGlass/kohana-twig",
-    "license":     "BSD-3-Clause",
-    "keywords":    ["kohana", "templating", "twig"],
+    "version": "0.0.0",
+    "homepage": "https://github.com/tommcdo/kohana-twig",
+    "license": "MIT",
+    "keywords": ["kohana", "templating", "twig"],
     "authors": [
         {
             "name":     "Tom McDonald",
             "homepage": "https://github.com/tommcdo",
             "role":     "developer"
+        },
+        {
+            "name": "Gilles Paquette",
+            "email": "paquettg@gmail.com",
+            "homepage": "http://gillespaquette.ca"
         },
         {
             "name":     "Yair Silbermintz",
@@ -20,7 +26,12 @@
     "require": {
         "composer/installers": "~1.0",
         "twig/twig"  : "1.*",
-        "kohana/core": ">=3.3",
+        "kohana/core": "3.3.*",
         "php": ">=5.3.3"
-    }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "mockery/mockery": "0.8.*"
+    },
+    "minimum-stability": "dev"
 }
