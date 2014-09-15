@@ -26,6 +26,9 @@ class Kohana_Twig extends View {
 
 	/**
 	 * Initialize the Twig module
+	 *
+	 * @throws Kohana_Exception
+	 * @return bool
 	 */
 	public static function init()
 	{
@@ -38,6 +41,7 @@ class Kohana_Twig extends View {
 				':dir' => Debug::path($path),
 			));
 		}
+		return true;
 	}
 
 	/**
