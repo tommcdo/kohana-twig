@@ -1,5 +1,7 @@
-kohana-twig
+kohana-twig Composer
 ===========
+
+Fork of [kohana-twig][7] to use composer instead of git-submodules
 
 Kohana-twig is a [Kohana][1] 3.3 module for the popular [Twig][2] template
 engine. It was designed to offer the full capabilities of Twig with a strong
@@ -11,20 +13,19 @@ are used, and it uses a custom Twig Loader to locate Twig template files in the
 Installation
 ------------
 
-First, clone this project from your `MODPATH/` directory:
+First, add the package to your composer.json requirements:
 
-	cd modules/
-	git clone https://github.com/tommcdo/kohana-twig.git twig
-	cd twig/
-	git submodule init
-	git submodule update
+	"MisterGlass/twig"  : "*"
+    
+Then, install using composer
+	php composer.phar update
 
 Then, enable the module in `APPPATH/bootstrap.php` by adding it to the modules
 initialization:
 
 	Kohana::modules(array(
 		// ... all your other modules ...
-		'twig'       => MODPATH.'twig',       // Twig templating engine
+		'twig'       => MODPATH.'kohana-twig',       // Twig templating engine
 	));
 
 This module was designed for Kohana 3.3, but can be easily made to work with
@@ -102,3 +103,4 @@ please read them over thoroughly.
 [4]: http://kohanaframework.org/3.3/guide/kohana/files
 [5]: http://twig.sensiolabs.org/doc/templates.html
 [6]: http://kohanaframework.org/3.3/guide/kohana/conventions
+[7]: https://github.com/tommcdo/kohana-twig
