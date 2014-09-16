@@ -22,6 +22,8 @@ require __DIR__.'/vendor/kohana/core/classes/Kohana.php';
 
 spl_autoload_register(array('Kohana', 'auto_load'));
 
+require __DIR__.'/vendor/autoload.php';
+
 /*
 |--------------------------------------------------------------------------
 | Set The Default Timezone

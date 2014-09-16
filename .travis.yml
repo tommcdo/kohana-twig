@@ -9,6 +9,7 @@ php:
 install:
   - composer self-update
   - composer install
+  - composer dumpautoload
 
 script:
   phpunit
