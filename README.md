@@ -1,7 +1,9 @@
 kohana-twig Composer
 ===========
 
-Fork of [kohana-twig][7] to use composer instead of git-submodules
+Version 1.0.0
+
+[![Build Status](https://travis-ci.org/tommcdo/kohana-twig.svg?branch=master)](https://travis-ci.org/tommcdo/kohana-twig)
 
 Kohana-twig is a [Kohana][1] 3.3 module for the popular [Twig][2] template
 engine. It was designed to offer the full capabilities of Twig with a strong
@@ -15,7 +17,7 @@ Installation
 
 First, add the package to your composer.json requirements:
 
-	"MisterGlass/twig"  : "*"
+	"tommcdo/twig"  : "1.0.*"
     
 Then, install using composer
 	php composer.phar update
