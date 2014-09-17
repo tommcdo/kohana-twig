@@ -2,7 +2,7 @@
     "name": "tommcdo/kohana-twig",
     "type": "kohana-module",
     "description": "Kohana 3.3 module for the popular Twig template engine",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/tommcdo/kohana-twig",
     "license": "MIT",
     "keywords": ["kohana", "templating", "twig"],

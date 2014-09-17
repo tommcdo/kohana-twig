@@ -1,7 +1,7 @@
 kohana-twig Composer
 ===========
 
-Version 1.0.0
+Version 1.0.1
 
 [![Build Status](https://travis-ci.org/tommcdo/kohana-twig.svg?branch=master)](https://travis-ci.org/tommcdo/kohana-twig)
 
