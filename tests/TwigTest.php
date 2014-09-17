@@ -66,6 +66,10 @@ class TwigTest extends PHPUnit_Framework_TestCase {
 		               ->with('filters')
 		               ->once()
 		               ->andReturn(array());
+		Kohana::$config->shouldReceive('get')
+		               ->with('tests')
+		               ->once()
+		               ->andReturn(array());
 
 		$twig = Twig::factory();
 		$twig->hello = 'Hello World!';
