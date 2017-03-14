@@ -18,10 +18,10 @@ class Kohana_Twig extends View {
 	 */
 	protected static function _init_cache($path)
 	{
-		if (mkdir($path, 0755, TRUE) AND chmod($path, 0755))
+		if (@mkdir($path, 0755, TRUE) AND chmod($path, 0755))
 			return TRUE;
 
-		return FALSE;
+		return is_dir($path);
 	}
 
 	/**
