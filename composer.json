@@ -2,7 +2,7 @@
     "name": "errotan/koseven-twig",
     "type": "koseven-module",
     "description": "Koseven module for the popular Twig template engine",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "homepage": "https://github.com/errotan/koseven-twig",
     "license": "MIT",
     "keywords": ["koseven", "kohana", "templating", "twig"],

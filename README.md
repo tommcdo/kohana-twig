@@ -1,7 +1,7 @@
-kohana-twig Composer
-===========
+koseven-twig
+============
 
-Version 1.0.1
+Version 1.0.3
 
 [![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
 
@@ -20,6 +20,7 @@ First, add the package to your composer.json requirements:
 	"errotan/koseven-twig": "*"
 
 Then, install using composer
+
 	php composer.phar update
 
 Then, enable the module in `APPPATH/bootstrap.php` by adding it to the modules
