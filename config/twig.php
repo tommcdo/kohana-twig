@@ -6,7 +6,7 @@ return [
 	 * Twig Loader options
 	 */
 	'loader' => [
-		'extension' => 'twig',  // Extension for Twig files
+		'extension' => 'html.twig',  // Extension for Twig files
 		'path'      => 'views', // Path within cascading filesystem for Twig files
 	],
 

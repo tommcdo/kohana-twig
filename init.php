@@ -1,4 +1,4 @@
 <?php
 
-define('TWIGPATH', __DIR__ . DIRECTORY_SEPARATOR);
+// Prepare twig environment
 Twig::init();

@@ -1,7 +1,7 @@
 koseven-twig
 ============
 
-Version 1.0.3
+Version 1.0.4
 
 [![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
 
@@ -15,11 +15,15 @@ are used, and it uses a custom Twig Loader to locate Twig template files in the
 Installation
 ------------
 
-First, add the package to your composer.json requirements:
+First, download this module to you modules directory:
 
-	"errotan/koseven-twig": "*"
+	modules/koseven-twig
 
-Then, install using composer
+Then, add the twig package to your composer.json requirements:
+
+	"twig/twig": "^2.0"
+
+Then, install it using composer
 
 	php composer.phar update
 
@@ -28,8 +32,11 @@ initialization:
 
 	Kohana::modules([
 		// ... all your other modules ...
-		'twig'       => MODPATH.'koseven-twig',       // Twig templating engine
+		'twig' => MODPATH.'koseven-twig', // Twig templating engine
 	]);
+
+Also enable composer autoloader (vendor/autoload.php) in this file if not already
+done so.
 
 Usage
 -----
@@ -37,10 +44,10 @@ Usage
 Use Twigs just as you use would use Koseven Views. By default, your Twig files
 go into the `views` directory anywhere in the cascading filesystem, and have
 a `.html.twig` extension. (Both of these settings can be configured.) For
-example, suppose you have a Twig file at `APPPATH/view/main.html.twig`, with
+example, suppose you have a Twig file at `APPPATH/views/main.html.twig`, with
 contents:
 
-	<p>Hello, {{ name }}</p>
+	<p>Hello, {{ name }}!</p>
 
 Inside your action, you would attach the Twig as follows:
 
@@ -51,7 +58,7 @@ Inside your action, you would attach the Twig as follows:
 Your Twig files can also reference other templates by name, which will be
 located using the cascading filesystem. Note that the extension of the twig
 file is omitted; in the following Twig template example, a file called
-`template.html` would be located in the cascading filesystem:
+`template.html.twig` would be located in the cascading filesystem:
 
 	{% extends "template" %}
 

@@ -43,7 +43,7 @@ class TwigTest extends TestCase {
 		               ->with('loader')
 		               ->once()
 		               ->andReturn([
-						'extension' => 'twig',
+						'extension' => 'html.twig',
 						'path'      => '',
 					   ]);
 		Kohana::$config->shouldReceive('get')
@@ -73,7 +73,7 @@ class TwigTest extends TestCase {
 
 		$twig = Twig::factory();
 		$twig->hello = 'Hello World!';
-		$view = $twig->render('tests/test.html');
+		$view = $twig->render('tests/test');
 		$this->assertEquals("Hello World!", trim($view));
 	}
 }
