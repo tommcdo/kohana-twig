@@ -1,7 +1,7 @@
 koseven-twig
 ============
 
-Version 1.0.6
+Version 1.0.7
 
 [![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
 
@@ -51,7 +51,7 @@ contents:
 
 Inside your action, you would attach the Twig as follows:
 
-	$twig = Twig::factory('main.html');
+	$twig = Twig::factory('main');
 	$twig->name = 'Tom';
 	$this->response->body($twig);
 
