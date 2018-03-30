@@ -32,8 +32,6 @@ class Kohana_Twig extends View {
 	 */
 	public static function init()
 	{
-		Twig_Autoloader::register();
-
 		$path = Kohana::$config->load('twig.environment.cache');
 		if ($path !== FALSE AND ! is_writable($path) AND ! self::_init_cache($path))
 		{
@@ -79,11 +77,11 @@ class Kohana_Twig extends View {
 			$env->addFilter($filter);
 		}
                 
-                foreach ($config->get('tests') as $key => $value)
-                {
-                    $test = new Twig_SimpleTest($key, $value);
-                    $env->addTest($test);
-                }
+		foreach ($config->get('tests') as $key => $value)
+		{
+			$test = new Twig_SimpleTest($key, $value);
+			$env->addTest($test);
+		}
 
 		return $env;
 	}

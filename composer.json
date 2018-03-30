@@ -8,14 +8,14 @@
     "keywords": ["koseven", "kohana", "templating", "twig"],
     "authors": [
         {
-            "name":     "Puskás Zsolt",
+            "name": "Puskás Zsolt",
             "homepage": "https://github.com/errotan",
-            "role":     "developer"
+            "role": "developer"
         },
         {
-            "name":     "Tom McDonald",
+            "name": "Tom McDonald",
             "homepage": "https://github.com/tommcdo",
-            "role":     "developer"
+            "role": "developer"
         },
         {
             "name": "Gilles Paquette",
@@ -24,10 +24,11 @@
         }
     ],
     "require": {
-        "twig/twig"  : "^2.0",
-        "php": ">=7.0.0"
+        "twig/twig": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0|^7.0"
+        "koseven/koseven": "*",
+        "phpunit/phpunit": "^6.0|^7.0",
+        "mockery/mockery": "*"
     }
 }
