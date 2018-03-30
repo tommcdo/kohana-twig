@@ -1,7 +1,7 @@
 koseven-twig
 ============
 
-Version 1.0.5
+Version 1.0.6
 
 [![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
 

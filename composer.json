@@ -2,25 +2,23 @@
     "name": "errotan/koseven-twig",
     "type": "koseven-module",
     "description": "Koseven module for the popular Twig template engine",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "homepage": "https://github.com/errotan/koseven-twig",
     "license": "MIT",
     "keywords": ["koseven", "kohana", "templating", "twig"],
     "authors": [
         {
-            "name": "Puskás Zsolt",
-            "homepage": "https://github.com/errotan",
-            "role": "developer"
-        },
-        {
             "name": "Tom McDonald",
-            "homepage": "https://github.com/tommcdo",
-            "role": "developer"
+            "homepage": "https://github.com/tommcdo"
         },
         {
             "name": "Gilles Paquette",
             "email": "paquettg@gmail.com",
             "homepage": "http://gillespaquette.ca"
+        },
+        {
+            "name": "Puskás Zsolt",
+            "homepage": "https://github.com/errotan"
         }
     ],
     "require": {
