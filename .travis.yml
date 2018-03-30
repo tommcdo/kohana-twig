@@ -1,15 +1,5 @@
 language: php
-
 php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-
-install:
-  - composer self-update
-  - composer install
-  - composer dumpautoload
-
-script:
-  phpunit
+  - 7.0
+  - 7.1
+  - 7.2
