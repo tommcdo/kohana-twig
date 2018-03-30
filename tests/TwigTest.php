@@ -42,14 +42,14 @@ class TwigTest extends PHPUnit_Framework_TestCase {
 		Kohana::$config->shouldReceive('get')
 		               ->with('loader')
 		               ->once()
-		               ->andReturn(array(
+		               ->andReturn([
 						'extension' => 'html',
 						'path'      => '',
-		               ));
+					   ]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('environment')
 		               ->once()
-		               ->andReturn(array(
+		               ->andReturn([
 						'auto_reload'         => (Kohana::$environment == Kohana::DEVELOPMENT),
 						'autoescape'          => TRUE,
 						'base_template_class' => 'Twig_Template',
@@ -57,19 +57,19 @@ class TwigTest extends PHPUnit_Framework_TestCase {
 						'charset'             => 'utf-8',
 						'optimizations'       => -1,
 						'strict_variables'    => FALSE,
-					   ));
+					   ]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('functions')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('filters')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('tests')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 
 		$twig = Twig::factory();
 		$twig->hello = 'Hello World!';

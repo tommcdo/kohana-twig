@@ -25,10 +25,10 @@ Then, install using composer
 Then, enable the module in `APPPATH/bootstrap.php` by adding it to the modules
 initialization:
 
-	Kohana::modules(array(
+	Kohana::modules([
 		// ... all your other modules ...
 		'twig'       => MODPATH.'kohana-twig',       // Twig templating engine
-	));
+	]);
 
 This module was designed for Kohana 3.3, but can be easily made to work with
 Kohana 3.2 by changing all filenames within the `classes/` directory to

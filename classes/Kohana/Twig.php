@@ -37,9 +37,9 @@ class Kohana_Twig extends View {
 		$path = Kohana::$config->load('twig.environment.cache');
 		if ($path !== FALSE AND ! is_writable($path) AND ! self::_init_cache($path))
 		{
-			throw new Kohana_Exception('Directory :dir must exist and be writable', array(
+			throw new Kohana_Exception('Directory :dir must exist and be writable', [
 				':dir' => Debug::path($path),
-			));
+			]);
 		}
 		return true;
 	}

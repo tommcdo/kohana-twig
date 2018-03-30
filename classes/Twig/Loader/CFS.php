@@ -31,9 +31,9 @@ class Twig_Loader_CFS implements Twig_LoaderInterface {
 		if (($path = Kohana::find_file($this->_config['path'], $name, $this->_config['extension'])) === FALSE)
 		{
 			throw new Twig_Error_Loader(
-				__('The requested twig ":name" could not be found', array(
+				__('The requested twig ":name" could not be found', [
 					':name' => $name,
-				))
+				])
 			);
 		}
 		return $path;

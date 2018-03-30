@@ -20,7 +20,7 @@ ini_set('display_errors', '1');
 require __DIR__.'/vendor/kohana/core/classes/Kohana/Core.php';
 require __DIR__.'/vendor/kohana/core/classes/Kohana.php';
 
-spl_autoload_register(array('Kohana', 'auto_load'));
+spl_autoload_register(['Kohana', 'auto_load']);
 
 require __DIR__.'/vendor/autoload.php';
 
