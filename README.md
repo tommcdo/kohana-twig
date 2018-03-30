@@ -1,7 +1,7 @@
 koseven-twig
 ============
 
-Version 1.0.4
+Version 1.0.5
 
 [![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
 
@@ -15,7 +15,7 @@ are used, and it uses a custom Twig Loader to locate Twig template files in the
 Installation
 ------------
 
-First, download this module to you modules directory:
+First, download this module to your modules directory:
 
 	modules/koseven-twig
 
@@ -35,8 +35,8 @@ initialization:
 		'twig' => MODPATH.'koseven-twig', // Twig templating engine
 	]);
 
-Also enable composer autoloader (vendor/autoload.php) in this file if not already
-done so.
+Also enable composer autoloader (vendor/autoload.php) in this file if not
+already done so.
 
 Usage
 -----
@@ -67,9 +67,9 @@ For more information on Twig templates, see [Twig for Template Designers][5]
 Configuration
 -------------
 
-Default configuration is kept in `MODPATH/twig/config/twig.php`. To override
-it, you can create a config file at `APPPATH/config/twig.php` (or in the
-`config/` directory of any module that gets loaded before this one) that
+Default configuration is kept in `MODPATH/koseven-twig/config/twig.php`. To
+override it, you can create a config file at `APPPATH/config/twig.php` (or in
+the `config/` directory of any module that gets loaded before this one) that
 specifies values to any options you'd like to change.
 
 Extending
