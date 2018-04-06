@@ -17,7 +17,7 @@ Installation
 
 First, download this module to your modules directory:
 
-	modules/koseven-twig
+	modules/twig
 
 Then, add the twig package to your composer.json requirements:
 
@@ -32,7 +32,7 @@ initialization:
 
 	Kohana::modules([
 		// ... all your other modules ...
-		'twig' => MODPATH.'koseven-twig', // Twig templating engine
+		'twig' => MODPATH.'twig', // Twig templating engine
 	]);
 
 Also enable composer autoloader (vendor/autoload.php) in this file if not
@@ -105,9 +105,9 @@ module, the main thing I ask is that the code conforms to
 please read them over thoroughly.
 
 [1]: http://koseven.ga
-[2]: http://twig.sensiolabs.org
-[3]: http://docs.koseven.da/kohana/mvc/views
-[4]: http://docs.koseven.da/kohana/files
-[5]: http://twig.sensiolabs.org/doc/templates.html
-[6]: http://docs.koseven.da/kohana/conventions
+[2]: https://twig.symfony.com/
+[3]: https://docs.koseven.ga/guide/kohana/mvc/views
+[4]: https://docs.koseven.ga/guide/kohana/files
+[5]: https://twig.symfony.com/doc/2.x/templates.html
+[6]: https://docs.koseven.ga/guide/kohana/conventions
 [7]: https://github.com/errotan/koseven-twig
