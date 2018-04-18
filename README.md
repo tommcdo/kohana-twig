@@ -1,11 +1,11 @@
-koseven-twig
-============
+kohana-twig
+===========
 
-Version 1.0.7
+Version 1.0.2
 
-[![Build Status](https://travis-ci.org/errotan/koseven-twig.svg?branch=master)](https://travis-ci.org/errotan/koseven-twig)
+[![Build Status](https://travis-ci.org/tommcdo/kohana-twig.svg?branch=master)](https://travis-ci.org/tommcdo/kohana-twig)
 
-Koseven-twig is a [Koseven][1] module for the popular [Twig][2] template
+Kohana-twig is a [Koseven][1] module for the popular [Twig][2] template
 engine. It was designed to offer the full capabilities of Twig with a strong
 focus on operating within the guidelines and best practices of the Koseven
 framework. This module provides a way to use Twigs exactly as Koseven [Views][3]
@@ -67,7 +67,7 @@ For more information on Twig templates, see [Twig for Template Designers][5]
 Configuration
 -------------
 
-Default configuration is kept in `MODPATH/koseven-twig/config/twig.php`. To
+Default configuration is kept in `MODPATH/twig/config/twig.php`. To
 override it, you can create a config file at `APPPATH/config/twig.php` (or in
 the `config/` directory of any module that gets loaded before this one) that
 specifies values to any options you'd like to change.
@@ -76,7 +76,7 @@ Extending
 ---------
 
 Twig offers many ways to extend the base templating environment. In
-koseven-twig, this can be achieved by overriding the static `Twig::env()`
+kohana-twig, this can be achieved by overriding the static `Twig::env()`
 method. To do so, you can define the class `APPPATH/classes/Twig.php` as
 follows:
 
@@ -110,4 +110,3 @@ please read them over thoroughly.
 [4]: https://docs.koseven.ga/guide/kohana/files
 [5]: https://twig.symfony.com/doc/2.x/templates.html
 [6]: https://docs.koseven.ga/guide/kohana/conventions
-[7]: https://github.com/errotan/koseven-twig
