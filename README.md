@@ -1,48 +1,53 @@
-kohana-twig Composer
+kohana-twig
 ===========
 
-Version 1.0.1
+Version 1.0.2
 
 [![Build Status](https://travis-ci.org/tommcdo/kohana-twig.svg?branch=master)](https://travis-ci.org/tommcdo/kohana-twig)
 
-Kohana-twig is a [Kohana][1] 3.3 module for the popular [Twig][2] template
+Kohana-twig is a [Koseven][1] module for the popular [Twig][2] template
 engine. It was designed to offer the full capabilities of Twig with a strong
-focus on operating within the guidelines and best practices of the Kohana
-framework. This module provides a way to use Twigs exactly as Kohana [Views][3]
+focus on operating within the guidelines and best practices of the Koseven
+framework. This module provides a way to use Twigs exactly as Koseven [Views][3]
 are used, and it uses a custom Twig Loader to locate Twig template files in the
 [Cascading Filesystem][4].
 
 Installation
 ------------
 
-First, add the package to your composer.json requirements:
+First, download this module to your modules directory:
 
-	"tommcdo/twig"  : "1.0.*"
-    
-Then, install using composer
+	modules/twig
+
+Then, add the twig package to your composer.json requirements:
+
+	"twig/twig": "^2.0"
+
+Then, install it using composer
+
 	php composer.phar update
 
 Then, enable the module in `APPPATH/bootstrap.php` by adding it to the modules
 initialization:
 
-	Kohana::modules(array(
+	Kohana::modules([
 		// ... all your other modules ...
-		'twig'       => MODPATH.'kohana-twig',       // Twig templating engine
-	));
+		'twig' => MODPATH.'twig', // Twig templating engine
+	]);
 
-This module was designed for Kohana 3.3, but can be easily made to work with
-Kohana 3.2 by changing all filenames within the `classes/` directory to
-lowercase.
+Also enable composer autoloader (vendor/autoload.php) in this file if not
+already done so.
 
 Usage
 -----
 
-Use Twigs just as you use would use Kohana Views. By default, your Twig files
-go into the `twigs` directory anywhere in the cascading filesystem, and have
-a `.html` extension. (Both of these settings can be configured.) For example,
-suppose you have a Twig file at `APPPATH/twigs/main.html`, with contents:
+Use Twigs just as you use would use Koseven Views. By default, your Twig files
+go into the `views` directory anywhere in the cascading filesystem, and have
+a `.html.twig` extension. (Both of these settings can be configured.) For
+example, suppose you have a Twig file at `APPPATH/views/main.html.twig`, with
+contents:
 
-	<p>Hello, {{ name }}</p>
+	<p>Hello, {{ name }}!</p>
 
 Inside your action, you would attach the Twig as follows:
 
@@ -53,7 +58,7 @@ Inside your action, you would attach the Twig as follows:
 Your Twig files can also reference other templates by name, which will be
 located using the cascading filesystem. Note that the extension of the twig
 file is omitted; in the following Twig template example, a file called
-`template.html` would be located in the cascading filesystem:
+`template.html.twig` would be located in the cascading filesystem:
 
 	{% extends "template" %}
 
@@ -62,9 +67,9 @@ For more information on Twig templates, see [Twig for Template Designers][5]
 Configuration
 -------------
 
-Default configuration is kept in `MODPATH/twig/config/twig.php`. To override
-it, you can create a config file at `APPPATH/config/twig.php` (or in the
-`config/` directory of any module that gets loaded before this one) that
+Default configuration is kept in `MODPATH/twig/config/twig.php`. To
+override it, you can create a config file at `APPPATH/config/twig.php` (or in
+the `config/` directory of any module that gets loaded before this one) that
 specifies values to any options you'd like to change.
 
 Extending
@@ -94,15 +99,14 @@ follows:
 Contributing
 ------------
 
-Contributions are always welcome and appreciated. Since this is a Kohana
+Contributions are always welcome and appreciated. Since this is a Koseven
 module, the main thing I ask is that the code conforms to
-[Kohana's Conventions and Style][6]. If you're not familiar with them,
+[Koseven's Conventions and Style][6]. If you're not familiar with them,
 please read them over thoroughly.
 
-[1]: http://kohanaframework.org
-[2]: http://twig.sensiolabs.org
-[3]: http://kohanaframework.org/3.3/guide/kohana/mvc/views
-[4]: http://kohanaframework.org/3.3/guide/kohana/files
-[5]: http://twig.sensiolabs.org/doc/templates.html
-[6]: http://kohanaframework.org/3.3/guide/kohana/conventions
-[7]: https://github.com/tommcdo/kohana-twig
+[1]: http://koseven.ga
+[2]: https://twig.symfony.com/
+[3]: https://docs.koseven.ga/guide/kohana/mvc/views
+[4]: https://docs.koseven.ga/guide/kohana/files
+[5]: https://twig.symfony.com/doc/2.x/templates.html
+[6]: https://docs.koseven.ga/guide/kohana/conventions

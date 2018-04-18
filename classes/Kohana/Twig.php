@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
 
 /**
  * Twig view
@@ -32,14 +32,12 @@ class Kohana_Twig extends View {
 	 */
 	public static function init()
 	{
-		Twig_Autoloader::register();
-
 		$path = Kohana::$config->load('twig.environment.cache');
 		if ($path !== FALSE AND ! is_writable($path) AND ! self::_init_cache($path))
 		{
-			throw new Kohana_Exception('Directory :dir must exist and be writable', array(
+			throw new Kohana_Exception('Directory :dir must exist and be writable', [
 				':dir' => Debug::path($path),
-			));
+			]);
 		}
 		return true;
 	}
@@ -79,11 +77,11 @@ class Kohana_Twig extends View {
 			$env->addFilter($filter);
 		}
                 
-                foreach ($config->get('tests') as $key => $value)
-                {
-                    $test = new Twig_SimpleTest($key, $value);
-                    $env->addTest($test);
-                }
+		foreach ($config->get('tests') as $key => $value)
+		{
+			$test = new Twig_SimpleTest($key, $value);
+			$env->addTest($test);
+		}
 
 		return $env;
 	}

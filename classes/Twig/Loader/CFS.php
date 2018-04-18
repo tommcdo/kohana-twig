@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
 
 /**
  * Twig loader for Kohana's cascading filesystem
@@ -30,12 +30,9 @@ class Twig_Loader_CFS implements Twig_LoaderInterface {
 	{
 		if (($path = Kohana::find_file($this->_config['path'], $name, $this->_config['extension'])) === FALSE)
 		{
-			throw new Twig_Error_Loader(
-				__('The requested twig ":name" could not be found', array(
-					':name' => $name,
-				))
-			);
+			throw new Twig_Error_Loader('The requested twig "'.$name.'" could not be found!');
 		}
+
 		return $path;
 	}
 
@@ -66,11 +63,34 @@ class Twig_Loader_CFS implements Twig_LoaderInterface {
 	 *
 	 * @param   string  $name  Base name of template
 	 * @param   int     $time  Timestamp to compare against
-	 * @return  bool    TRUE iff compiled template is older than timestamp
+	 * @return  bool    TRUE if compiled template is older than timestamp
 	 */
 	public function isFresh($name, $time)
 	{
         return filemtime($this->find_template($name)) <= $time;
 	}
 
+	/**
+	 * Returns twig source context.
+	 * 
+	 * @param   string  $name  Base name of template
+	 * @return  Twig_Source
+	 */
+	public function getSourceContext($name)
+	{
+		$path = $this->find_template($name);
+
+		return new Twig_Source(file_get_contents($path), $name, $path); 
+	}
+
+	/**
+	 * Checks if file exists.
+	 * 
+	 * @param   string  $name  Base name of template
+	 * @return  bool    TRUE if template exists
+	 */
+	public function exists($name)
+	{
+		return ! empty($this->find_template($name));
+	}
 } // End CFS

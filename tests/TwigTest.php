@@ -1,23 +1,23 @@
 <?php
 
-use \Mockery as m;
+use PHPUnit\Framework\TestCase;
 
-class TwigTest extends PHPUnit_Framework_TestCase {
+class TwigTest extends TestCase {
 
 	public function setUp()
 	{
-		Kohana::$config = m::mock('Config')->makePartial()
-		                                   ->attach(new Config_File);
+		Kohana::$config = Mockery::mock('Config')->makePartial()
+		                                   		 ->attach(new Config_File);
 	}
 
 	public function tearDown()
 	{
-		m::close();
+		Mockery::close();
 	}
 
 	public function testLoadingTwig()
 	{
-		$twig = new Twig;
+		$twig = new Twig();
 		$this->assertTrue($twig instanceof Kohana_Twig);
 	}
 
@@ -42,34 +42,34 @@ class TwigTest extends PHPUnit_Framework_TestCase {
 		Kohana::$config->shouldReceive('get')
 		               ->with('loader')
 		               ->once()
-		               ->andReturn(array(
-						'extension' => 'html',
+		               ->andReturn([
+						'extension' => 'html.twig',
 						'path'      => '',
-		               ));
+					   ]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('environment')
 		               ->once()
-		               ->andReturn(array(
-						'auto_reload'         => (Kohana::$environment == Kohana::DEVELOPMENT),
-						'autoescape'          => TRUE,
+		               ->andReturn([
+						'auto_reload'         => (Kohana::$environment === Kohana::DEVELOPMENT),
+						'autoescape'          => 'name',
 						'base_template_class' => 'Twig_Template',
 						'cache'               => APPPATH.'cache/twig',
 						'charset'             => 'utf-8',
 						'optimizations'       => -1,
 						'strict_variables'    => FALSE,
-					   ));
+					   ]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('functions')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('filters')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 		Kohana::$config->shouldReceive('get')
 		               ->with('tests')
 		               ->once()
-		               ->andReturn(array());
+		               ->andReturn([]);
 
 		$twig = Twig::factory();
 		$twig->hello = 'Hello World!';
