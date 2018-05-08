@@ -12,6 +12,11 @@ framework. This module provides a way to use Twigs exactly as Kohana [Views][3]
 are used, and it uses a custom Twig Loader to locate Twig template files in the
 [Cascading Filesystem][4].
 
+Looking for a Koseven module?
+-----------------------------
+
+Take a look at [koseven-twig](https://github.com/errotan/koseven-twig) by [errotan](https://github.com/errotan).
+
 Installation
 ------------
 
