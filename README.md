@@ -15,7 +15,8 @@ are used, and it uses a custom Twig Loader to locate Twig template files in the
 Looking for a Koseven module?
 -----------------------------
 
-Take a look at [koseven-twig](https://github.com/errotan/koseven-twig) by [errotan](https://github.com/errotan).
+Take a look at [koseven-twig](https://github.com/kohanax/koseven-twig) by [kohanax](https://github.com/kohanax).
+Twig v3.x supported
 
 Installation
 ------------
